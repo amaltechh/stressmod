@@ -1,13 +1,14 @@
 import pandas as pd
 import numpy as np
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report
 import joblib
 import os
 
 # Configuration
-RF_ESTIMATORS = 100
+GB_ESTIMATORS = 100
+LEARNING_RATE = 0.1
 TEST_SIZE = 0.2
 RANDOM_STATE = 42
 
@@ -61,12 +62,12 @@ def train():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE)
     
     # Train
-    print(f"🌲 Training Random Forest with {RF_ESTIMATORS} trees...")
-    rf = RandomForestClassifier(n_estimators=RF_ESTIMATORS, random_state=RANDOM_STATE)
-    rf.fit(X_train, y_train)
+    print(f"🚀 Training Gradient Boosting Machine (GBM) with {GB_ESTIMATORS} estimators...")
+    gb = GradientBoostingClassifier(n_estimators=GB_ESTIMATORS, learning_rate=LEARNING_RATE, max_depth=3, random_state=RANDOM_STATE)
+    gb.fit(X_train, y_train)
     
     # Evaluate
-    y_pred = rf.predict(X_test)
+    y_pred = gb.predict(X_test)
     acc = accuracy_score(y_test, y_pred)
     print(f"🎯 Model Accuracy: {acc:.2%}")
     print("\nClassification Report:")
@@ -74,9 +75,9 @@ def train():
     
     # Save
     if not os.path.exists('wearable'): os.makedirs('wearable')
-    path = 'wearable/trained_random_forest_model.pkl'
-    joblib.dump(rf, path)
-    print(f"💾 Model saved to: {path}")
+    path = 'wearable/trained_gbm_model.pkl'
+    joblib.dump(gb, path)
+    print(f"💾 SOTA Model saved to: {path}")
 
 if __name__ == "__main__":
     train()

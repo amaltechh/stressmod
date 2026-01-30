@@ -722,11 +722,16 @@ def main():
         probs = model.predict_proba([[eda, hr, temp]])[0]
         classes = model.classes_
         
+        # Model was trained with LabelEncoder: 0=High, 1=Low, 2=Medium
+        # Map probabilities to stress score (0-1 scale)
         bio_score = 0.0
         for cls, prob in zip(classes, probs):
-            if cls == 'Low': bio_score += prob * 0.2
-            elif cls == 'Medium': bio_score += prob * 0.5
-            elif cls == 'High': bio_score += prob * 0.9
+            if cls == 0:  # High
+                bio_score += prob * 0.9
+            elif cls == 1:  # Low
+                bio_score += prob * 0.2
+            elif cls == 2:  # Medium
+                bio_score += prob * 0.5
             
     except Exception as e:
         # Fallback if model missing or error

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuro-Fusion Stress Analyzer - Simple Process Flow</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 10px;
+            margin-top: 0;
+            text-align: center;
+        }
+        p.subtitle {
+            color: #666666;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .mermaid {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+        }
+        .mermaid svg {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Project Process Flow</h1>
+    <p class="subtitle">A simplified, high-level view of the Neuro-Fusion project lifecycle.</p>
+    
+    <div class="mermaid">
+        flowchart LR
+            subgraph P1 [1. Preparation & AI Training]
+                direction TB
+                A(["Generate Sensor Data"])
+                B(["Train Best ML Model"])
+                A --> B
+            end
+
+            subgraph P2 [2. Patient Input]
+                direction TB
+                C(["Record Live Biometrics"])
+                D(["Take PSS Questionnaire"])
+            end
+
+            subgraph P3 [3. Neuro-Fusion Engine]
+                direction TB
+                E(["Body Score (60%)"])
+                F(["Mind Score (40%)"])
+                G(["Weighted Fusion Analysis"])
+                E & F --> G
+            end
+
+            subgraph P4 [4. Diagnosis & Output]
+                direction TB
+                H(["Predict Stress Level"])
+                I(["Generate Clinical Report"])
+                J(["Suggest IKS Therapies"])
+                H --> I
+                H --> J
+            end
+
+            B ==>|Model Ready| C & D
+            C ==>|Objective Data| E
+            D ==>|Subjective Data| F
+            G ==>|Final Score| H
+    </div>
+
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                nodeSpacing: 50,
+                rankSpacing: 50
+            }
+        });
+    </script>
+</body>
+</html>

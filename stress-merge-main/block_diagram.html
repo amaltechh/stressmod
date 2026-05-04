@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuro-Fusion Stress Analyzer - Block Diagram</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+        .mermaid {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+        }
+        .mermaid svg {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Neuro-Fusion System Block Diagram</h1>
+    <div class="mermaid" id="diagram">
+        graph TD
+            subgraph INPUT["📥 DATA ACQUISITION LAYER"]
+                A1["⌚ Wearable Sensors"]
+                A2["📋 PSS Survey"]
+                A3["🤖 Demo Presets"]
+            end
+
+            subgraph DATA["💾 DATA LAYER"]
+                D3["generate_data.py"]
+                D1["stress_survey_gen.csv"]
+                D2["stress_prediction_log_gen.csv"]
+            end
+
+            subgraph TRAINING["🏋️ MODEL TRAINING PIPELINE"]
+                T1["Feature Engineering"]
+                T2["Label Encoding"]
+                T3["Train/Test Split"]
+                
+                subgraph MODELS["6 Competing Models"]
+                    direction LR
+                    M1["Log Reg"]
+                    M2["SVM"]
+                    M3["RF"]
+                    M4["XGB"]
+                    M5["⭐ GBM"]
+                    M6["MLP"]
+                end
+                
+                T4["Model Evaluation"]
+                T5["trained_gbm_model.pkl"]
+            end
+
+            subgraph FUSION["🧬 NEURO-FUSION ENGINE"]
+                F1["Subjective Score"]
+                F2["Objective Score"]
+                F3["Weighted Fusion: 0.6×Body + 0.4×Mind"]
+                F4["Stress Classification: Low / Med / High"]
+            end
+
+            subgraph OUTPUT["📊 PRESENTATION LAYER"]
+                O1["🧘 Live App (8530)"]
+                O2["🧬 Batch Analysis (8501)"]
+                
+                subgraph FEATURES["Application Features"]
+                    direction LR
+                    FE1["Clinical Report"]
+                    FE2["IKS Remedies"]
+                    FE3["AI Chatbot"]
+                    FE4["Session Tracker"]
+                    FE5["Dashboard"]
+                end
+            end
+
+            %% Data Flow Connections
+            D3 --> D1 & D2
+            D1 & D2 --> T1
+            T1 --> T2 --> T3 --> MODELS --> T4 --> T5
+            
+            A1 & A3 --> F2
+            A2 & A3 --> F1
+            
+            T5 --> F2
+            
+            F1 & F2 --> F3 --> F4
+            
+            F4 --> O1 & O2
+            O1 & O2 --> FEATURES
+    </div>
+
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose'
+        });
+    </script>
+</body>
+</html>

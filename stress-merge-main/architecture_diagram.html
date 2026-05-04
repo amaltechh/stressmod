@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuro-Fusion Stress Analyzer - Architecture Diagrams</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        h1, h2 {
+            color: #333333;
+            text-align: center;
+            margin: 10px 0;
+        }
+        h1 { font-size: 1.8rem; margin-bottom: 20px; }
+        h2 { font-size: 1.3rem; margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 5px; width: 100%; max-width: 1200px;}
+        .mermaid-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .mermaid {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mermaid svg {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+        }
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 8px;
+            text-align: left;
+        }
+        th { background-color: #f8fafc; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <h1>Neuro-Fusion Stress Analyzer — System Architecture</h1>
+    
+    <div class="mermaid-container">
+
+        <h2>1. High-Level System Architecture</h2>
+        <div class="mermaid">
+        graph TD
+            subgraph INPUT["📥 DATA ACQUISITION LAYER"]
+                A1["⌚ Wearable Sensors"]
+                A2["📋 PSS Survey"]
+                A3["🤖 Demo Presets"]
+            end
+
+            subgraph DATA["💾 DATA LAYER"]
+                D3["generate_data.py"]
+                D1["stress_survey_gen.csv"]
+                D2["stress_prediction_log_gen.csv"]
+            end
+
+            subgraph TRAINING["🏋️ MODEL TRAINING PIPELINE"]
+                T1["Feature Engineering"]
+                T2["Label Encoding"]
+                T3["Train/Test Split"]
+                
+                subgraph MODELS["6 Competing Models"]
+                    direction LR
+                    M1["Log Reg"]
+                    M2["SVM"]
+                    M3["RF"]
+                    M4["XGB"]
+                    M5["⭐ GBM"]
+                    M6["MLP"]
+                end
+                
+                T4["Model Evaluation"]
+                T5["trained_gbm_model.pkl"]
+            end
+
+            subgraph FUSION["🧬 NEURO-FUSION ENGINE"]
+                F1["Subjective Score"]
+                F2["Objective Score"]
+                F3["Weighted Fusion: 0.6×Body + 0.4×Mind"]
+                F4["Stress Classification: Low / Med / High"]
+            end
+
+            subgraph OUTPUT["📊 PRESENTATION LAYER"]
+                O1["🧘 Live App (8530)"]
+                O2["🧬 Batch Analysis (8501)"]
+                
+                subgraph FEATURES["Application Features"]
+                    direction LR
+                    FE1["Clinical Report"]
+                    FE2["IKS Remedies"]
+                    FE3["AI Chatbot"]
+                    FE4["Session Tracker"]
+                    FE5["Dashboard"]
+                end
+            end
+
+            %% Data Flow Connections
+            D3 --> D1 & D2
+            D1 & D2 --> T1
+            T1 --> T2 --> T3 --> MODELS --> T4 --> T5
+            
+            A1 & A3 --> F2
+            A2 & A3 --> F1
+            
+            T5 --> F2
+            
+            F1 & F2 --> F3 --> F4
+            
+            F4 --> O1 & O2
+            O1 & O2 --> FEATURES
+        </div>
+
+        <h2>2. Neuro-Fusion Algorithm — Detailed Flow</h2>
+        <div class="mermaid">
+        graph LR
+            subgraph SUBJECTIVE["🧠 Mind Score (40%)"]
+                S1["Academic<br/>5 questions"]
+                S2["Emotional<br/>4 questions"]
+                S3["Social<br/>4 questions"]
+                S4["Physical<br/>4 questions"]
+                S5["Coping<br/>7 questions"]
+                S6["Category Norm<br/>(0–1 each)"]
+                S7["PSS Total<br/>avg of 5 cats"]
+            end
+
+            subgraph OBJECTIVE["⌚ Body Score (60%)"]
+                B1["EDA (µS)<br/>Sweat glands"]
+                B2["Heart Rate<br/>(BPM)"]
+                B3["Skin Temp<br/>(°C)"]
+                B4["GBM Model<br/>predict_proba"]
+                B5["Bio Score<br/>P(H)×0.9 + P(M)×0.5 + P(L)×0.2"]
+            end
+
+            subgraph RESULT["🎯 Diagnosis"]
+                R1["Final Score<br/>0.6×Body + 0.4×Mind"]
+                R2{"Score < 0.4?"}
+                R3["🟢 LOW<br/>Kapha / Eustress"]
+                R4["🟡 MEDIUM<br/>Vata / Allostatic"]
+                R5["🔴 HIGH<br/>Pitta / Burnout"]
+            end
+
+            S1 & S2 & S3 & S4 & S5 --> S6 --> S7
+            B1 & B2 & B3 --> B4 --> B5
+            S7 -->|"× 0.4"| R1
+            B5 -->|"× 0.6"| R1
+            R1 --> R2
+            R2 -->|Yes| R3
+            R2 -->|"0.4–0.7"| R4
+            R2 -->|"> 0.7"| R5
+        </div>
+
+        <h2>3. ML Training Pipeline</h2>
+        <div class="mermaid">
+        graph TD
+            A["📂 Raw CSVs<br/><i>Survey + Wearable</i>"] --> B["🔬 Feature Engineering<br/><i>Map labels → EDA, HR, TEMP</i>"]
+            B --> C["🔢 Label Encoding<br/><i>LabelEncoder: H=0, L=1, M=2</i>"]
+            C --> D["✂️ Train/Test Split<br/><i>80/20, Stratified, Seed=42</i>"]
+            D --> E1["Logistic Regression<br/><i>max_iter=1000</i>"]
+            D --> E2["SVM (RBF)<br/><i>C=10, gamma=scale</i>"]
+            D --> E3["Random Forest<br/><i>100 trees</i>"]
+            D --> E4["XGBoost<br/><i>lr=0.1, depth=3</i>"]
+            D --> E5["⭐ Gradient Boosting<br/><i>100 trees, lr=0.1, depth=3</i>"]
+            D --> E6["MLP Neural Net<br/><i>64→32→16, ReLU, Adam</i>"]
+            
+            E1 & E2 & E3 & E4 & E5 & E6 --> F["📊 Evaluation<br/><i>Accuracy · F1 · Precision · Recall</i>"]
+            F --> G["🏆 Best Model Selection<br/><i>by F1-Score</i>"]
+            G --> H["💾 Export<br/><i>best_model.pkl + trained_gbm_model.pkl</i>"]
+            H --> I["🚀 Deploy in live_app.py<br/><i>joblib.load → predict_proba</i>"]
+        </div>
+
+        <h2>4. SFAA Core Merge Logic (Batch Mode)</h2>
+        <div class="mermaid">
+        graph TD
+            A["📋 Survey Data<br/><i>N records with stress labels</i>"] --> C["SFAA Core Engine<br/><i>merge.py: sfaa_core()</i>"]
+            B["⌚ Wearable Data<br/><i>N × ratio sensor readings</i>"] --> C
+            
+            C --> D{"N_wearable > N_survey?"}
+            D -->|Yes| E["Chunk Grouping<br/><i>group = index // ratio</i>"]
+            E --> F["Aggregate per group<br/><i>mean / median / max</i>"]
+            F --> G["Horizontal Concat<br/><i>survey + aggregated sensors</i>"]
+            D -->|No| H["Min-Align Concat<br/><i>truncate to smallest</i>"]
+            H --> G
+
+            G --> I["Normalize Labels<br/><i>'Low Stress'→'Low' etc.</i>"]
+            I --> J["Auto-Optimizer<br/><i>Try mean, median, max<br/>Pick best alignment</i>"]
+            J --> K["📊 Analysis Dashboard"]
+
+            subgraph DASHBOARD["Analysis Engine Tabs"]
+                K1["🔥 Confusion Matrix"]
+                K2["⏳ Temporal Stability"]
+                K3["🕸️ Class Radar"]
+                K4["🌊 Sankey Flow"]
+                K5["📈 Feature Impact"]
+            end
+
+            K --> DASHBOARD
+        </div>
+
+        <h2>5. File Dependency Map</h2>
+        <div class="mermaid">
+        graph LR
+            subgraph GENERATORS["Data Generation"]
+                GEN["generate_data.py"]
+            end
+
+            subgraph DATASETS["CSV Datasets"]
+                CSV1["stress_survey_gen.csv"]
+                CSV2["stress_prediction_log_gen.csv"]
+            end
+
+            subgraph TRAINERS["Model Training"]
+                TR1["train_model.py<br/><i>GBM only</i>"]
+                TR2["train_all_models.py<br/><i>6 models comparative</i>"]
+            end
+
+            subgraph ARTIFACTS["Model Artifacts"]
+                PKL1["wearable/trained_gbm_model.pkl"]
+                PKL2["wearable/best_model.pkl"]
+                LOG["training.log"]
+                RES["training_results.csv"]
+            end
+
+            subgraph APPS["Streamlit Applications"]
+                APP1["live_app.py<br/><i>:8530 · Clinical UI</i>"]
+                APP2["merge.py<br/><i>:8501 · Batch Analysis</i>"]
+            end
+
+            subgraph SUPPORT["Support Files"]
+                SUP1["transparency_dashboard_snippet.py"]
+                SUP2["wearable/app.py"]
+                SUP3["wearable/ext.py"]
+                SUP4["survey/gui_app.py"]
+                SUP5["survey/stress.py"]
+            end
+
+            GEN --> CSV1 & CSV2
+            CSV1 & CSV2 --> TR1 & TR2
+            TR1 --> PKL1
+            TR2 --> PKL1 & PKL2 & LOG & RES
+            PKL1 --> APP1
+            CSV1 & CSV2 --> APP2
+            SUP1 -.->|"snippet used in"| APP1
+        </div>
+
+        <h2>6. IKS Therapeutic Mapping</h2>
+        <div class="mermaid">
+        graph TD
+            SCORE["Final Stress Score"] --> CHECK{"Classify"}
+            
+            CHECK -->|"< 0.4"| LOW["🟢 LOW STRESS"]
+            CHECK -->|"0.4 – 0.7"| MED["🟡 MEDIUM STRESS"]
+            CHECK -->|"> 0.7"| HIGH["🔴 HIGH STRESS"]
+
+            LOW --> K["Kapha Tendency"]
+            MED --> V["Vata Imbalance"]
+            HIGH --> P["Pitta Imbalance"]
+
+            K --> K1["🔥 Kapalbhati<br/><i>Skull Shining Breath</i>"]
+            K --> K2["☀️ Surya Namaskar<br/><i>Sun Salutation</i>"]
+            K --> K3["🌶️ Ginger + Turmeric<br/><i>Metabolic Activation</i>"]
+            K --> K4["💪 Gayatri Mantra"]
+
+            V --> V1["👃 Nadi Shodhana<br/><i>Alternate Nostril</i>"]
+            V --> V2["🌲 Vrikshasana<br/><i>Tree Pose</i>"]
+            V --> V3["🍵 Chamomile / Tulsi<br/><i>Adaptogenic</i>"]
+            V --> V4["✨ So Hum Mantra"]
+
+            P --> P1["🐝 Bhramari<br/><i>Humming Bee Breath</i>"]
+            P --> P2["🧘 Shavasana<br/><i>Corpse Pose</i>"]
+            P --> P3["🥥 Coconut Water<br/><i>Sattvic Cooling</i>"]
+            P --> P4["🕉️ Om Shanti Mantra"]
+        </div>
+
+        <h2>7. Technology Stack</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Layer</th>
+                    <th>Technology</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Frontend</strong></td>
+                    <td>Streamlit</td>
+                    <td>Web UI framework</td>
+                </tr>
+                <tr>
+                    <td><strong>Styling</strong></td>
+                    <td>Custom CSS</td>
+                    <td>Glassmorphism, 3D effects, animations</td>
+                </tr>
+                <tr>
+                    <td><strong>Typography</strong></td>
+                    <td>Plus Jakarta Sans / Rajdhani</td>
+                    <td>Medical-grade readability</td>
+                </tr>
+                <tr>
+                    <td><strong>ML Engine</strong></td>
+                    <td>scikit-learn <code>GradientBoostingClassifier</code></td>
+                    <td>Primary stress classifier</td>
+                </tr>
+                <tr>
+                    <td><strong>ML Comparison</strong></td>
+                    <td>Logistic Reg, SVM, RF, XGBoost, MLP</td>
+                    <td>Benchmark models</td>
+                </tr>
+                <tr>
+                    <td><strong>Visualization</strong></td>
+                    <td>Plotly (interactive) + Matplotlib (reports)</td>
+                    <td>Charts, gauges, radar, Sankey</td>
+                </tr>
+                <tr>
+                    <td><strong>Data</strong></td>
+                    <td>Pandas + NumPy</td>
+                    <td>Data wrangling & numerical ops</td>
+                </tr>
+                <tr>
+                    <td><strong>Serialization</strong></td>
+                    <td>Joblib</td>
+                    <td>Model persistence (.pkl)</td>
+                </tr>
+                <tr>
+                    <td><strong>Report Gen</strong></td>
+                    <td>Matplotlib → PDF/PNG</td>
+                    <td>Clinical report export</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>8. Application UI Structure</h2>
+        <div class="mermaid">
+        graph TD
+            subgraph LIVE["live_app.py — Clinical Edition"]
+                L1["🏠 Hero Header<br/><i>Zen Analyzer</i>"]
+                L2["📡 Data Acquisition<br/><i>6 Tabs: Academic · Emotional · Social · Physical · Coping · Biometrics</i>"]
+                L3["🚀 Generate Clinical Report<br/><i>Button trigger</i>"]
+                L4["📊 Results Dashboard<br/><i>Metrics · Lifestyle Audit · Diagnosis</i>"]
+                L5["🌿 IKS Intervention<br/><i>Pranayama · Asana · Diet · Mantra</i>"]
+                L6["📥 Report Downloads<br/><i>PDF + PNG</i>"]
+                L7["📈 Telemetry & Session History"]
+                L8["🧠 Transparency Dashboard<br/><i>XAI / Pipeline / Signal Decoder</i>"]
+                
+                L1 --> L2 --> L3 --> L4 --> L5 --> L6 --> L7 --> L8
+            end
+
+            subgraph SIDEBAR["Sidebar"]
+                SB1["🤖 Dr. Zen AI Chatbot<br/><i>Quick Consult Chips</i>"]
+            end
+
+            subgraph MERGE["merge.py — Batch Analysis"]
+                MG1["📂 Data Inspector<br/><i>Dictionary · Stats · Quality · DNA</i>"]
+                MG2["⚡ Analysis Engine<br/><i>Confusion Matrix · Temporal · Radar · Sankey · Features</i>"]
+                MG3["🧠 AI Masterclass<br/><i>Neurobiology · ML · Signal Processing</i>"]
+            end
+
+            LIVE --- SIDEBAR
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose'
+        });
+    </script>
+</body>
+</html>

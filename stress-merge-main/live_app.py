@@ -159,30 +159,74 @@ st.markdown("""
 IKS_DB = {
     "High": {
         "Theme": "Cooling & Grounding (Pitta)",
-        "BioState": "🔥 **Critical Hyper-Arousal:** Your Sympathetic Nervous System is currently 'locked on'. This state releases a flood of Cortisol and Adrenaline, causing inflammation, cognitive fog, and potential burnout. **Immediate physiological reset required.**",
-        "Pranayama": "🐝 **Bhramari (Humming Bee Breath)**: Use vibrational resonance to stimulate the Vagus Nerve and force a parasympathetic dominance (Rest & Digest).",
-        "Asana": "🧘 **Shavasana (Corpse Pose)**: Total stillness is non-negotiable. Do NOT engage in cardio; your heart needs to perceive safety, not threat.",
-        "Diet": "🥥 **Sattvic Cooling Protocol**: Focus on alkaline hydration (Coconut water, Cucumber). Avoid all stimulants (Caffeine, Spicy/Sour foods) to arrest the cortisol spike.",
-        "Mantra": "🕉️ **Om Shanti**: 'I am Peace'. Use this frequency to override the mental noise.",
+        "BioState": "🔥 Critical Hyper-Arousal: Your Sympathetic Nervous System is currently 'locked on'. This state releases a flood of Cortisol and Adrenaline, causing inflammation, cognitive fog, and potential burnout. Immediate physiological reset required.",
+        "Pranayama": "🐝 Bhramari (Humming Bee Breath): Use vibrational resonance to stimulate the Vagus Nerve and force a parasympathetic dominance (Rest & Digest).",
+        "Asana": "🧘 Shavasana (Corpse Pose): Total stillness is non-negotiable. Do NOT engage in cardio; your heart needs to perceive safety, not threat.",
+        "Diet": "🥥 Sattvic Cooling Protocol: Focus on alkaline hydration (Coconut water, Cucumber). Avoid all stimulants (Caffeine, Spicy/Sour foods) to arrest the cortisol spike.",
+        "Mantra": "🕉️ Om Shanti: 'I am Peace'. Use this frequency to override the mental noise.",
         "Img": "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=600&auto=format&fit=crop" # Yoga Shavasana
     },
     "Medium": {
         "Theme": "Balancing (Tridosha)",
-        "BioState": "⚠️ **Allostatic Overload:** Your body is efficiently handling stress, but the 'cost' is accumulating silently. You are in the 'Resistance Phase' of General Adaptation Syndrome. Without intervention, this leads to exhaustion.",
-        "Pranayama": "👃 **Nadi Shodhana**: Alternate Nostril Breathing to mechanically balance the Left (Logical) and Right (Creative) brain hemispheres.",
-        "Asana": "🌲 **Vrikshasana (Tree Pose)**: A single-point focus pose to stabilize the wandering mind and ground physical energy.",
-        "Diet": "🍵 **Adaptogenic Support**: Warm Chamomile or Tulsi (Holy Basil) tea to naturally modulate cortisol levels without sedation.",
-        "Mantra": "✨ **So Hum**: 'I am That'. Re-aligning your personal rhythm with the universal rhythm.",
+        "BioState": "⚠️ Allostatic Overload: Your body is efficiently handling stress, but the 'cost' is accumulating silently. You are in the 'Resistance Phase' of General Adaptation Syndrome. Without intervention, this leads to exhaustion.",
+        "Pranayama": "👃 Nadi Shodhana: Alternate Nostril Breathing to mechanically balance the Left (Logical) and Right (Creative) brain hemispheres.",
+        "Asana": "🌲 Vrikshasana (Tree Pose): A single-point focus pose to stabilize the wandering mind and ground physical energy.",
+        "Diet": "🍵 Adaptogenic Support: Warm Chamomile or Tulsi (Holy Basil) tea to naturally modulate cortisol levels without sedation.",
+        "Mantra": "✨ So Hum: 'I am That'. Re-aligning your personal rhythm with the universal rhythm.",
         "Img": "https://images.unsplash.com/photo-1474418397713-7ede21d49118?q=80&w=600&auto=format&fit=crop" # Nature/Balance
     },
     "Low": {
         "Theme": "Energizing & Maintaining (Kapha)",
-        "BioState": "✅ **Optimal Homeostasis:** Your Allostatic load is minimal. Your autonomic nervous system is flexible and resilient. This is 'Eustress'—positive stress that drives growth and focus.",
-        "Pranayama": "🔥 **Kapalbhati (Skull Shining)**: Rapid forceful exhalations to energize the frontal cortex and clear mental cobwebs.",
-        "Asana": "☀️ **Surya Namaskar (Sun Salutation)**: Dynamic kinetic flow to build metabolic heat and maintain agility.",
-        "Diet": "🌶️ **Metabolic Activation**: Light, spiced foods (Ginger, Turmeric, Honey) to prevent stagnation and keep energy flowing.",
-        "Mantra": "💪 **Gayatri Mantra**: Invoking clarity and intellectual brilliance.",
+        "BioState": "✅ Optimal Homeostasis: Your Allostatic load is minimal. Your autonomic nervous system is flexible and resilient. This is 'Eustress'—positive stress that drives growth and focus.",
+        "Pranayama": "🔥 Kapalbhati (Skull Shining): Rapid forceful exhalations to energize the frontal cortex and clear mental cobwebs.",
+        "Asana": "☀️ Surya Namaskar (Sun Salutation): Dynamic kinetic flow to build metabolic heat and maintain agility.",
+        "Diet": "🌶️ Metabolic Activation: Light, spiced foods (Ginger, Turmeric, Honey) to prevent stagnation and keep energy flowing.",
+        "Mantra": "💪 Gayatri Mantra: Invoking clarity and intellectual brilliance.",
         "Img": "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=600&auto=format&fit=crop" # Active Fitness
+    }
+}
+
+# --- CATEGORY-SPECIFIC THERAPEUTIC PROTOCOLS ---
+CATEGORY_IKS = {
+    "Academic": {
+        "Theme": "Focus & Clarity (Saraswati Protocol)",
+        "Pranayama": "🐝 Bhramari (Humming Bee Breath) to clear mental fog and improve concentration.",
+        "Asana": "🧘 Padmasana (Lotus Pose) to stabilize posture for long study sessions.",
+        "Diet": "🧠 Brain-boosting foods: Walnuts, Brahmi/Gotu Kola tea, and omega-rich seeds.",
+        "Mantra": "📚 Om Aim Saraswatyai Namaha (To invoke intellect and memory).",
+        "Img": "https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=600&auto=format&fit=crop" # Books/Focus
+    },
+    "Emotional": {
+        "Theme": "Heart-Centric Healing (Anahata Protocol)",
+        "Pranayama": "👃 Anulom Vilom (Alternate Nostril) to balance emotional hemispheres.",
+        "Asana": "🐪 Ustrasana (Camel Pose) to open the chest and release trapped emotional energy.",
+        "Diet": "🍠 Mood-stabilizing grounding foods: Sweet potatoes, Ashwagandha milk, dark chocolate.",
+        "Mantra": "🕊️ Om Shanti Shanti Shanti (For profound inner peace).",
+        "Img": "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=600&auto=format&fit=crop" # Peaceful
+    },
+    "Social": {
+        "Theme": "Boundaries & Connection (Vishuddha Protocol)",
+        "Pranayama": "🌊 Ujjayi (Ocean Breath) to build internal heat and vocal confidence.",
+        "Asana": "🐟 Matsyasana (Fish Pose) to open the throat chakra for better communication.",
+        "Diet": "🍵 Soothing throat foods: Warm ginger-lemon tea, turmeric, and honey.",
+        "Mantra": "🤝 Aham Prema (I am Divine Love - to foster healthy relationships).",
+        "Img": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=600&auto=format&fit=crop" # Friendship/Connection
+    },
+    "Physical": {
+        "Theme": "Restoration & Recovery (Muladhara Protocol)",
+        "Pranayama": "🌬️ Dirgha Pranayama (Three-Part Breath) to deeply oxygenate fatigued muscles.",
+        "Asana": "🛌 Balasana (Child's Pose) or Viparita Karani (Legs Up the Wall) for sheer physical rest.",
+        "Diet": "🍲 Anti-inflammatory healing: Turmeric golden milk, bone broth, magnesium-rich spinach.",
+        "Mantra": "🌱 Lam (Root chakra bija mantra to ground the physical body).",
+        "Img": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=600&auto=format&fit=crop" # Stretching/Rest
+    },
+    "Coping": {
+        "Theme": "Resilience & Strategy (Manipura Protocol)",
+        "Pranayama": "🔥 Kapalabhati (Skull Shining Breath) to ignite internal willpower and motivation.",
+        "Asana": "⛵ Navasana (Boat Pose) to build core strength and psychological fortitude.",
+        "Diet": "🌶️ Metabolism-igniting foods: Ginger, black pepper, citrus fruits to break lethargy.",
+        "Mantra": "⚡ Ram (Solar plexus bija mantra to activate courage and action).",
+        "Img": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop" # Meditation/Strength
     }
 }
 
@@ -229,14 +273,30 @@ def generate_diagnosis(bio_score, sub_score, cat_scores):
     """Generate a smart text explanation based on the data split."""
     dominant_cat = max(cat_scores, key=cat_scores.get)
     
-    text = f"**Primary Stress Driver: {dominant_cat}** ({cat_scores[dominant_cat]:.0%} Load)\n\n"
+    text = f"**Primary Stress Driver:** {dominant_cat} ({cat_scores[dominant_cat]:.0%} Load)<br><br>"
+    
+    diff = abs(bio_score - sub_score)
     
     if bio_score > sub_score + 0.3:
-        text += "⚠️ **Somatic Mismatch:** Your body is screaming (High Bio-Stress) while your mind thinks it's fine. This is dangerous—it often precedes sudden burnout or panic attacks. Check for physical triggers (sleep deprivation, caffeine)."
+        text += f"⚠️ **CRITICAL WARNING - Somatic Mismatch ({diff:.0%} Variance)**<br>"
+        text += f"Your body is screaming (Body Score: {bio_score:.0%}) while your mind thinks it's fine (Mind Score: {sub_score:.0%}). This is a dangerous state of autonomic nervous system overload that often precedes sudden burnout or panic attacks.<br><br>"
+        text += "🩺 **Targeted Remedy:** Stop intellectualizing your stress. Your body needs immediate physiological regulation. Focus on deep box-breathing, somatic experiencing (like shaking or vagus nerve stimulation), and strictly limit caffeine/stimulants. Prioritize 8 hours of sleep tonight."
+    elif bio_score > sub_score + 0.15:
+        text += f"⚠️ **Elevated Somatic Load ({diff:.0%} Variance)**<br>"
+        text += f"Your physical stress (Body Score: {bio_score:.0%}) is noticeably higher than your mental perception (Mind Score: {sub_score:.0%}). Your body is carrying tension you might be ignoring.<br><br>"
+        text += "🩺 **Targeted Remedy:** Incorporate progressive muscle relaxation or yoga nidra before bed. Check your posture, hydration, and consider a light physical release like a brisk walk or stretching to dissipate the trapped cortisol."
     elif sub_score > bio_score + 0.3:
-        text += "🧠 **Psychological Distress:** Your body is relatively calm, but your mind is racing. This is 'Perceived Stress'. Mindfulness and CBT techniques will be highly effective here."
+        text += f"⚠️ **CRITICAL WARNING - Psychological Distress ({diff:.0%} Variance)**<br>"
+        text += f"Your mind is racing (Mind Score: {sub_score:.0%}), but your body is relatively calm (Body Score: {bio_score:.0%}). This severe 'Perceived Stress' indicates rumination, anxiety, or cognitive overload without immediate physical danger.<br><br>"
+        text += "🧠 **Targeted Remedy:** Your brain is stuck in a loop. You need to break the cognitive cycle. Use 'brain dumping' (journaling all worries), practice mindfulness/CBT techniques to challenge catastrophic thoughts, and ground yourself in the present moment using the 5-4-3-2-1 sensory technique."
+    elif sub_score > bio_score + 0.15:
+        text += f"⚠️ **Elevated Cognitive Load ({diff:.0%} Variance)**<br>"
+        text += f"You are experiencing high perceived stress (Mind Score: {sub_score:.0%}) compared to your physical state (Body Score: {bio_score:.0%}). You are overthinking or carrying emotional burdens.<br><br>"
+        text += "🧠 **Targeted Remedy:** Engage in a flow-state activity that distracts the mind (art, puzzles, playing an instrument). Limit doom-scrolling and try a 10-minute guided meditation focused on detaching from racing thoughts."
     else:
-        text += "⚖️ **Aligned State:** Your physical and mental states are synchronized. Your subjective feeling matches your biological reality."
+        text += f"⚖️ **Aligned State ({diff:.0%} Variance)**<br>"
+        text += f"Your physical ({bio_score:.0%}) and mental ({sub_score:.0%}) states are synchronized. Your subjective feeling matches your biological reality.<br><br>"
+        text += "🌿 **Targeted Remedy:** Maintain your current routine. Use generalized adaptogenic practices like moderate exercise, balanced nutrition, and standard daily mindfulness to maintain this equilibrium."
         
     return text
 
@@ -452,7 +512,7 @@ def render_transparency_dashboard():
             """, unsafe_allow_html=True)
             st.metric("📊 F1-Score", "98.7%", delta="+4.5% vs RF")
 
-def generate_clinical_report(score, bio, mind, cat_scores, remedy, level):
+def generate_clinical_report(score, bio, mind, cat_scores, remedy, level, patient_name="Patient"):
     """Generates a high-res clinical report with EMBEDDED CHARTS (Fixed Layout)."""
     # Setup Figure
     plt.style.use('default')
@@ -468,6 +528,7 @@ def generate_clinical_report(score, bio, mind, cat_scores, remedy, level):
     ax_main.plot([0.1, 0.9], [0.89, 0.89], color='#0f172a', linewidth=2)
     
     # --- PATIENT INFO BLOCK ---
+    ax_main.text(0.1, 0.87, f"PATIENT: {patient_name}", fontsize=11, color='#0f172a', weight='bold', fontfamily='monospace')
     ax_main.text(0.1, 0.85, f"DATE: {time.strftime('%Y-%m-%d')}", fontsize=10, color='#334155', fontfamily='monospace')
     ax_main.text(0.1, 0.83, f"REF ID: SFAA-{int(time.time())}", fontsize=10, color='#334155', fontfamily='monospace')
     ax_main.text(0.9, 0.85, "CONFIDENTIAL", ha='right', fontsize=10, color='#ef4444', weight='bold')
@@ -519,13 +580,18 @@ def generate_clinical_report(score, bio, mind, cat_scores, remedy, level):
     # --- PROTOCOL (Bottom) ---
     ax_main.text(0.1, 0.26, "THERAPEUTIC PROTOCOL", fontsize=12, color='#0f172a', weight='bold')
     
-    bio_clean = remedy['BioState'].replace('**', '')
+    bio_clean = remedy['BioState']
+    # Extract technique name: text between emoji and first colon
+    def extract_name(text):
+        # Skip emoji prefix (first 2-3 chars), return the rest
+        parts = text.split(' ', 1)
+        return parts[1] if len(parts) > 1 else text
     plan_clean = (
         f"PHYSIOLOGY: {bio_clean}\n\n"
-        f"BREATHWORK: {remedy['Pranayama'].split('**')[1]}\n"
-        f"MOVEMENT:   {remedy['Asana'].split('**')[1]}\n"
-        f"NUTRITION:  {remedy['Diet'].split('**')[1]}\n"
-        f"MANTRA:     {remedy['Mantra'].split('**')[1]}"
+        f"BREATHWORK: {extract_name(remedy['Pranayama'])}\n"
+        f"MOVEMENT:   {extract_name(remedy['Asana'])}\n"
+        f"NUTRITION:  {extract_name(remedy['Diet'])}\n"
+        f"MANTRA:     {extract_name(remedy['Mantra'])}"
     )
     # Using ax_main ensures this starts at 0.22 height relative to page
     ax_main.text(0.1, 0.08, plan_clean, fontsize=9, color='#334155', va='bottom', wrap=True, family='monospace', linespacing=1.8)
@@ -555,12 +621,21 @@ def main():
         </div>
     """, unsafe_allow_html=True)
     
-    # --- INPUT SECTION (Tabbed Wizard) ---
-    st.markdown("#### 📡 Patient Data Acquisition")
-    render_reference_guide()
-    
+    # --- SESSION STATE INIT ---
     if 'history' not in st.session_state:
         st.session_state['history'] = []
+    if 'wizard_step' not in st.session_state:
+        st.session_state['wizard_step'] = 0  # 0=name, 1-6=form steps
+    if 'form_data' not in st.session_state:
+        st.session_state['form_data'] = {
+            'aq1': 1, 'aq2': 1, 'aq3': 1, 'aq4': 2, 'aq5': 1,
+            'eq1': 2, 'eq2': 1, 'eq3': 1, 'eq4': 1,
+            'sq1': 1, 'sq2': 2, 'sq3': 1, 'sq4': 1,
+            'pq1': 1, 'pq2': 1, 'pq3': 2, 'pq4': 1,
+            'cq1': 2, 'cq2': 2, 'cq3': 2, 'cq4': 3, 'cq5': 1, 'cq6': 2, 'cq7': 1,
+            'eda': 2.5, 'hr': 72, 'temp': 36.5
+        }
+    fd = st.session_state['form_data']
     
     # --- DR. ZEN CHATBOT (Phase 8) ---
     with st.sidebar:
@@ -604,10 +679,67 @@ def main():
         if prompt := st.chat_input("Or type here..."):
              st.session_state["messages"].append({"role": "user", "content": prompt})
              st.chat_message("user").write(prompt)
-             # Default fallback
              fallback = "I recommend checking the **Quick Consult** buttons above for reliable advice on Yoga, Diet, and Usage!"
              st.session_state["messages"].append({"role": "assistant", "content": fallback})
              st.rerun()
+    
+    # --- WIZARD STEP NAMES ---
+    step_names = ["👤 Patient Info", "📚 Academic", "🧠 Emotional", "🤝 Social", "🏃 Physical", "🛡️ Coping", "⌚ Biometrics"]
+    current_step = st.session_state['wizard_step']
+    
+    # --- PROGRESS BAR ---
+    if current_step > 0:
+        progress_pct = current_step / 6
+        st.markdown(f"""
+        <div style="margin: 20px 0 10px 0;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span style="color: #94a3b8; font-size: 0.85rem;">Step {current_step} of 6</span>
+                <span style="color: #2dd4bf; font-size: 0.85rem; font-weight: 600;">{step_names[current_step]}</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); border-radius: 10px; height: 8px; overflow: hidden;">
+                <div style="background: linear-gradient(90deg, #2dd4bf, #3b82f6); height: 100%; width: {progress_pct*100:.0f}%; border-radius: 10px; transition: width 0.4s ease;"></div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # =============================================
+    # STEP 0: NAME ENTRY (GATE)
+    # =============================================
+    if current_step == 0:
+        st.markdown("#### 📡 Patient Data Acquisition")
+        st.markdown("""
+        <div style="background: rgba(45, 212, 191, 0.05); border: 1px solid rgba(45, 212, 191, 0.2); border-radius: 16px; padding: 40px; text-align: center; margin: 30px 0;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">👤</div>
+            <h3 style="color: #f1f5f9; margin-bottom: 8px;">Welcome to Zen Analyzer</h3>
+            <p style="color: #94a3b8; margin-bottom: 25px;">Please enter your name to begin the stress assessment</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        patient_name = st.text_input(
+            "👤 Full Name",
+            value=st.session_state.get('patient_name_val', ''),
+            placeholder="Enter your full name to begin...",
+            key="patient_name_input",
+            help="Required. Your name will appear on the clinical report."
+        )
+        
+        render_reference_guide()
+        
+        if st.button("▶️ BEGIN ASSESSMENT", type="primary", use_container_width=True, disabled=not bool(patient_name and patient_name.strip())):
+            st.session_state['patient_name_val'] = patient_name.strip()
+            st.session_state['wizard_step'] = 1
+            st.rerun()
+        
+        if not (patient_name and patient_name.strip()):
+            st.info("💡 Enter your name above to unlock the assessment form.")
+        
+        # Show transparency dashboard even on step 0
+        render_transparency_dashboard()
+        return
+    
+    # --- Patient name from session (for all subsequent steps) ---
+    patient_name = st.session_state.get('patient_name_val', 'Patient')
+    st.markdown(f"<p style='color: #64748b; font-size: 0.9rem; margin-bottom: 5px;'>Patient: <span style=\"color: #2dd4bf; font-weight: 600;\">{patient_name}</span></p>", unsafe_allow_html=True)
     
     # --- DEMO PRESETS ---
     def set_preset(level):
@@ -615,15 +747,18 @@ def main():
             val_q, val_eda, val_hr, val_temp = 1, 2.5, 70, 36.5
         elif level == "Medium":
             val_q, val_eda, val_hr, val_temp = 2, 6.0, 95, 34.0
-        else: # High
+        else:
             val_q, val_eda, val_hr, val_temp = 3, 12.0, 115, 31.0
-            
-        # Update Session State
         keys = ['aq1','aq2','aq3','aq4','aq5', 'eq1','eq2','eq3','eq4', 'sq1','sq2','sq3','sq4', 'pq1','pq2','pq3','pq4', 'cq1','cq2','cq3','cq4','cq5','cq6','cq7']
-        for k in keys: st.session_state[k] = val_q
+        for k in keys: 
+            st.session_state[k] = val_q
+            fd[k] = val_q
         st.session_state['eda'] = val_eda
         st.session_state['hr'] = val_hr
         st.session_state['temp'] = val_temp
+        fd['eda'] = val_eda
+        fd['hr'] = val_hr
+        fd['temp'] = val_temp
 
     st.write("🤖 **Demo Simulation:**")
     bc1, bc2, bc3 = st.columns(3)
@@ -631,69 +766,126 @@ def main():
     if bc2.button("🟡 Simulate Medium Stress", use_container_width=True): set_preset("Medium")
     if bc3.button("🔴 Simulate High Stress", use_container_width=True): set_preset("High")
     
-    t1, t2, t3, t4, t5, t6 = st.tabs(["📚 Academic", "🧠 Emotional", "🤝 Social", "🏃 Physical", "🛡️ Coping", "⌚ Biometrics"])
+    # =============================================
+    # STEP 1-6: FORM SECTIONS (one at a time)
+    # =============================================
     
-    # 1. Academic
-    with t1:
+    # Helper: which keys belong to which step
+    step_keys = {
+        1: ['aq1','aq2','aq3','aq4','aq5'],
+        2: ['eq1','eq2','eq3','eq4'],
+        3: ['sq1','sq2','sq3','sq4'],
+        4: ['pq1','pq2','pq3','pq4'],
+        5: ['cq1','cq2','cq3','cq4','cq5','cq6','cq7'],
+        6: ['eda','hr','temp'],
+    }
+    
+    def save_current_step():
+        """Save current step's widget values to persistent form_data."""
+        keys = step_keys.get(current_step, [])
+        for k in keys:
+            if k in st.session_state:
+                fd[k] = st.session_state[k]
+    
+    # --- STEP 1: Academic ---
+    if current_step == 1:
+        st.markdown("### 📚 Academic Stress")
         c1, c2 = st.columns(2)
         with c1:
-            aq1 = st.slider("1. Workload Overwhelm", 0, 4, 1, key="aq1", help="Do you feel buried under assignments?")
-            aq2 = st.slider("2. Exam Anxiety", 0, 4, 1, key="aq2", help="Do you freeze up before tests?")
-            aq3 = st.slider("3. Deadline Struggles", 0, 4, 1, key="aq3")
+            st.slider("1. Workload Overwhelm", 0, 4, fd['aq1'], key="aq1", help="Do you feel buried under assignments?")
+            st.slider("2. Exam Anxiety", 0, 4, fd['aq2'], key="aq2", help="Do you freeze up before tests?")
+            st.slider("3. Deadline Struggles", 0, 4, fd['aq3'], key="aq3")
         with c2:
-            aq4 = st.slider("4. GPA Worries", 0, 4, 2, key="aq4")
-            aq5 = st.slider("5. Balancing Projects", 0, 4, 1, key="aq5")
-            
-    # 2. Emotional
-    with t2:
+            st.slider("4. GPA Worries", 0, 4, fd['aq4'], key="aq4")
+            st.slider("5. Balancing Projects", 0, 4, fd['aq5'], key="aq5")
+    
+    # --- STEP 2: Emotional ---
+    elif current_step == 2:
+        st.markdown("### 🧠 Emotional Stress")
         c1, c2 = st.columns(2)
         with c1:
-            eq1 = st.slider("6. Emotional Exhaustion", 0, 4, 2, key="eq1")
-            eq2 = st.slider("7. Demotivation", 0, 4, 1, key="eq2")
+            st.slider("6. Emotional Exhaustion", 0, 4, fd['eq1'], key="eq1")
+            st.slider("7. Demotivation", 0, 4, fd['eq2'], key="eq2")
         with c2:
-            eq3 = st.slider("8. Mood Swings", 0, 4, 1, key="eq3")
-            eq4 = st.slider("9. Feeling Isolated", 0, 4, 1, key="eq4")
-
-    # 3. Social
-    with t3:
+            st.slider("8. Mood Swings", 0, 4, fd['eq3'], key="eq3")
+            st.slider("9. Feeling Isolated", 0, 4, fd['eq4'], key="eq4")
+    
+    # --- STEP 3: Social ---
+    elif current_step == 3:
+        st.markdown("### 🤝 Social Stress")
         c1, c2 = st.columns(2)
         with c1:
-            sq1 = st.slider("10. No Time for Family", 0, 4, 1, key="sq1")
-            sq2 = st.slider("11. Family Expectations", 0, 4, 2, key="sq2")
+            st.slider("10. No Time for Family", 0, 4, fd['sq1'], key="sq1")
+            st.slider("11. Family Expectations", 0, 4, fd['sq2'], key="sq2")
         with c2:
-            sq3 = st.slider("12. Relationship Issues", 0, 4, 1, key="sq3")
-            sq4 = st.slider("13. Peer Pressure", 0, 4, 1, key="sq4")
-
-    # 4. Physical
-    with t4:
+            st.slider("12. Relationship Issues", 0, 4, fd['sq3'], key="sq3")
+            st.slider("13. Peer Pressure", 0, 4, fd['sq4'], key="sq4")
+    
+    # --- STEP 4: Physical ---
+    elif current_step == 4:
+        st.markdown("### 🏃 Physical Stress")
         c1, c2 = st.columns(2)
         with c1:
-            pq1 = st.slider("14. Headaches/Fatigue", 0, 4, 1, key="pq1")
-            pq2 = st.slider("15. Appetite Changes", 0, 4, 1, key="pq2")
+            st.slider("14. Headaches/Fatigue", 0, 4, fd['pq1'], key="pq1")
+            st.slider("15. Appetite Changes", 0, 4, fd['pq2'], key="pq2")
         with c2:
-            pq3 = st.slider("16. Tired after Sleep", 0, 4, 2, key="pq3")
-            pq4 = st.slider("17. Palpitations", 0, 4, 1, key="pq4")
-
-    # 5. Coping
-    with t5:
+            st.slider("16. Tired after Sleep", 0, 4, fd['pq3'], key="pq3")
+            st.slider("17. Palpitations", 0, 4, fd['pq4'], key="pq4")
+    
+    # --- STEP 5: Coping ---
+    elif current_step == 5:
+        st.markdown("### 🛡️ Coping Mechanisms")
         c1, c2 = st.columns(2)
         with c1:
-            cq1 = st.slider("18. Hesitate to seek help", 0, 4, 2, key="cq1")
-            cq2 = st.slider("19. Poor Concentration", 0, 4, 2, key="cq2")
-            cq3 = st.slider("20. No Strategy", 0, 4, 2, key="cq3")
-            cq4 = st.slider("21. No Hobbies", 0, 4, 3, key="cq4")
+            st.slider("18. Hesitate to seek help", 0, 4, fd['cq1'], key="cq1")
+            st.slider("19. Poor Concentration", 0, 4, fd['cq2'], key="cq2")
+            st.slider("20. No Strategy", 0, 4, fd['cq3'], key="cq3")
+            st.slider("21. No Hobbies", 0, 4, fd['cq4'], key="cq4")
         with c2:
-            cq5 = st.slider("22. Social Withdrawal", 0, 4, 1, key="cq5")
-            cq6 = st.slider("23. No Relaxation", 0, 4, 2, key="cq6")
-            cq7 = st.slider("24. Unaware of Support", 0, 4, 1, key="cq7")
-
-    # 6. Biometrics
-    with t6:
+            st.slider("22. Social Withdrawal", 0, 4, fd['cq5'], key="cq5")
+            st.slider("23. No Relaxation", 0, 4, fd['cq6'], key="cq6")
+            st.slider("24. Unaware of Support", 0, 4, fd['cq7'], key="cq7")
+    
+    # --- STEP 6: Biometrics ---
+    elif current_step == 6:
+        st.markdown("### ⌚ Biometric Data")
         st.info("💡 **Simulation Mode:** Connect medical-grade sensors or simulate bio-signals below.")
         b1, b2, b3 = st.columns(3)
-        with b1: eda = st.slider("⚡ EDA (µS)", 0.0, 20.0, 2.5, key="eda", help="Electrodermal Activity. Normal Resting: 2-5µS.")
-        with b2: hr = st.slider("❤️ Heart Rate", 50, 140, 72, key="hr", help="Resting Heart Rate (BPM).")
-        with b3: temp = st.slider("🌡️ Skin Temp (°C)", 30.0, 37.0, 36.5, key="temp", help="Peripheral temperature.")
+        with b1: st.slider("⚡ EDA (µS)", 0.0, 20.0, fd['eda'], key="eda", help="Electrodermal Activity. Normal Resting: 2-5µS.")
+        with b2: st.slider("❤️ Heart Rate", 50, 140, fd['hr'], key="hr", help="Resting Heart Rate (BPM).")
+        with b3: st.slider("🌡️ Skin Temp (°C)", 30.0, 37.0, fd['temp'], key="temp", help="Peripheral temperature.")
+    
+    # =============================================
+    # NAVIGATION BUTTONS (Back / Next / Generate)
+    # =============================================
+    st.markdown("---")
+    nav_col1, nav_col2, nav_col3 = st.columns([1, 2, 1])
+    
+    with nav_col1:
+        if current_step > 1:
+            if st.button("⬅️ Back", use_container_width=True):
+                save_current_step()
+                st.session_state['wizard_step'] = current_step - 1
+                st.rerun()
+    
+    with nav_col3:
+        if current_step < 6:
+            if st.button("Next ➡️", type="primary", use_container_width=True):
+                save_current_step()
+                st.session_state['wizard_step'] = current_step + 1
+                st.rerun()
+    
+    # --- Save current step on every rerun (catches direct slider changes) ---
+    save_current_step()
+    
+    # --- Read all values from persistent form_data for calculation ---
+    aq1 = fd['aq1']; aq2 = fd['aq2']; aq3 = fd['aq3']; aq4 = fd['aq4']; aq5 = fd['aq5']
+    eq1 = fd['eq1']; eq2 = fd['eq2']; eq3 = fd['eq3']; eq4 = fd['eq4']
+    sq1 = fd['sq1']; sq2 = fd['sq2']; sq3 = fd['sq3']; sq4 = fd['sq4']
+    pq1 = fd['pq1']; pq2 = fd['pq2']; pq3 = fd['pq3']; pq4 = fd['pq4']
+    cq1 = fd['cq1']; cq2 = fd['cq2']; cq3 = fd['cq3']; cq4 = fd['cq4']
+    cq5 = fd['cq5']; cq6 = fd['cq6']; cq7 = fd['cq7']
+    eda = fd['eda']; hr = fd['hr']; temp = fd['temp']
 
     # --- CALCULATION ---
     # Scores
@@ -710,194 +902,262 @@ def main():
 
     survey_total_norm = (s_acad+s_emo+s_soc+s_phys+s_cope)/5.0
     
-    # Biometric AI Prediction (GBM SOTA)
+    # --- STACKING ENSEMBLE: 3-Model Architecture ---
+    # Level 1a: XGBoost (Survey) — "The Psychologist"
+    # Level 1b: Random Forest (Wearable) — "The Doctor"
+    # Level 2:  GBM Meta-Learner (Fusion) — "The Judge"
+    
     try:
-        model = joblib.load('wearable/trained_gbm_model.pkl')
-        # Model expects: [EDA_Mean, HR_Mean, TEMP_Mean]
-        # We need to map probability of High Stress (Class 2) to a 0-1 scale
-        # Classes are likely ['High', 'Low', 'Medium'] sorted alphabetically? 
-        # Actually classes are likely string labels. Let's use simple logic:
-        # P(Low)*0.1 + P(Medium)*0.5 + P(High)*0.9
+        # Load all 3 models
+        xgb_model = joblib.load('survey/trained_xgb_survey.pkl')
+        rf_model = joblib.load('wearable/trained_rf_wearable.pkl')
+        meta_model = joblib.load('wearable/trained_gbm_meta.pkl')
+        le = joblib.load('wearable/label_encoder.pkl')
         
-        probs = model.predict_proba([[eda, hr, temp]])[0]
-        classes = model.classes_
+        # Level 1a: XGBoost predicts stress from survey features
+        survey_input = [[s_acad, s_emo, s_soc, s_phys, s_cope]]
+        xgb_probs = xgb_model.predict_proba(survey_input)[0]  # [P_High, P_Low, P_Med]
         
-        # Model was trained with LabelEncoder: 0=High, 1=Low, 2=Medium
-        # Map probabilities to stress score (0-1 scale)
+        # Level 1b: Random Forest predicts stress from wearable features
+        wearable_input = [[eda, hr, temp]]
+        rf_probs = rf_model.predict_proba(wearable_input)[0]  # [P_High, P_Low, P_Med]
+        
+        # Level 2: GBM Meta-Learner fuses both predictions
+        meta_features = np.concatenate([xgb_probs, rf_probs]).reshape(1, -1)  # 6 features
+        meta_prediction = meta_model.predict(meta_features)[0]
+        meta_probs = meta_model.predict_proba(meta_features)[0]
+        
+        # Convert meta-learner output to a 0-1 score for the gauge/report
+        # Classes from LabelEncoder: 0=High, 1=Low, 2=Medium
         bio_score = 0.0
-        for cls, prob in zip(classes, probs):
-            if cls == 0:  # High
+        survey_score_from_model = 0.0
+        for cls_idx, prob in enumerate(meta_probs):
+            cls_name = le.inverse_transform([cls_idx])[0]
+            if cls_name == 'High':
                 bio_score += prob * 0.9
-            elif cls == 1:  # Low
+            elif cls_name == 'Low':
                 bio_score += prob * 0.2
-            elif cls == 2:  # Medium
+            elif cls_name == 'Medium':
                 bio_score += prob * 0.5
+        
+        # Final score IS the meta-learner's output (no hardcoded formula)
+        final_score = bio_score
+        
+        # For display: extract individual model confidence for the report
+        # Store XGB and RF individual scores for the Mind/Body display
+        xgb_score = 0.0
+        for cls_idx, prob in enumerate(xgb_probs):
+            cls_name = le.inverse_transform([cls_idx])[0]
+            if cls_name == 'High': xgb_score += prob * 0.9
+            elif cls_name == 'Low': xgb_score += prob * 0.2
+            elif cls_name == 'Medium': xgb_score += prob * 0.5
+        survey_total_norm = xgb_score  # Override for display as "Mind Score"
+        
+        rf_score = 0.0
+        for cls_idx, prob in enumerate(rf_probs):
+            cls_name = le.inverse_transform([cls_idx])[0]
+            if cls_name == 'High': rf_score += prob * 0.9
+            elif cls_name == 'Low': rf_score += prob * 0.2
+            elif cls_name == 'Medium': rf_score += prob * 0.5
+        bio_score = rf_score  # Override for display as "Body Score"
             
     except Exception as e:
-        # Fallback if model missing or error
+        # Fallback: use old formula if stacking models are not available
+        # Biometric heuristic
         n_eda = min(1.0, eda / 15.0); n_hr = min(1.0, max(0, (hr - 60) / 60.0)); n_temp = min(1.0, max(0, (36.5 - temp) / 5.0))
         bio_score = (n_eda * 0.5) + (n_hr * 0.3) + (n_temp * 0.2)
-    
-    # Final Fusion
-    final_score = (bio_score * 0.6) + (survey_total_norm * 0.4)
+        # Fallback fusion formula (60/40)
+        final_score = (bio_score * 0.6) + (survey_total_norm * 0.4)
     
     # Update History
     st.session_state['history'].append(final_score)
 
-    st.markdown("---")
+    # --- Only show Generate button on final step (step 6) ---
+    if current_step == 6:
+        st.markdown("---")
     
-    if st.button("🚀 GENERATE CLINICAL REPORT", type="primary", use_container_width=True):
-        with st.spinner("Analyzing Bio-Markers..."):
-            time.sleep(1.0)
-            
-            # Categorize
-            if final_score < 0.4: level = "Low"; color = "#10b981" # Emerald 500
-            elif final_score < 0.7: level = "Medium"; color = "#f59e0b" # Amber 500
-            else: level = "High"; color = "#ef4444" # Red 500
-            
-            remedy = IKS_DB[level]
-            
-            # --- RESULTS HEADER ---
-            st.markdown(f"""
-            <div style="text-align: center; margin-bottom: 30px; animation: pulseSoft 3s infinite;">
-                <h2 style="font-size: 2.5rem; margin: 0; color: {color};">{level.upper()} STRESS DETECTED</h2>
-                <p style="font-size: 1rem; color: #94a3b8; letter-spacing: 1px;">CONFIDENCE INTERVAL: {final_score:.1%}</p>
-            </div>
-            """, unsafe_allow_html=True)
-            
-            # --- ROW 1: METRICS & REPORT CARD ---
-            c1, c2 = st.columns([1, 1.5])
-            
-            with c1:
+        if st.button("🚀 GENERATE CLINICAL REPORT", type="primary", use_container_width=True):
+            with st.spinner("Analyzing Bio-Markers..."):
+                time.sleep(1.0)
+                
+                # Categorize
+                if final_score < 0.4: level = "Low"; color = "#10b981" # Emerald 500
+                elif final_score < 0.7: level = "Medium"; color = "#f59e0b" # Amber 500
+                else: level = "High"; color = "#ef4444" # Red 500
+                
+                dominant_cat = max(cat_scores, key=cat_scores.get)
+                
+                if level in ["High", "Medium"]:
+                    remedy = CATEGORY_IKS[dominant_cat]
+                    # We still need the BioState string from the main DB for the clinical diagnosis text
+                    remedy['BioState'] = IKS_DB[level]['BioState']
+                else:
+                    remedy = IKS_DB[level]
+                
+                # --- RESULTS HEADER ---
                 st.markdown(f"""
-                <div class='result-card'>
-                    <div style="margin-bottom: 20px;">
-                        <div class="metric-label">Total Load</div>
-                        <div class="metric-value" style="color: {color}">{final_score:.1%}</div>
-                    </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <div>
-                            <div class="metric-label">Mind</div>
-                            <div class="metric-value" style="font-size: 1.5rem;">{survey_total_norm:.1%}</div>
-                        </div>
-                        <div>
-                            <div class="metric-label">Body</div>
-                            <div class="metric-value" style="font-size: 1.5rem;">{bio_score:.1%}</div>
-                        </div>
-                    </div>
+                <div style="text-align: center; margin-bottom: 30px; animation: pulseSoft 3s infinite;">
+                    <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 5px; letter-spacing: 2px; text-transform: uppercase;">Report for</p>
+                    <h2 style="font-size: 2rem; margin: 0 0 10px 0; color: #f1f5f9; font-weight: 700;">{patient_name}</h2>
+                    <h2 style="font-size: 2.5rem; margin: 0; color: {color};">{level.upper()} STRESS DETECTED</h2>
+                    <p style="font-size: 1rem; color: #94a3b8; letter-spacing: 1px;">CONFIDENCE INTERVAL: {final_score:.1%}</p>
                 </div>
                 """, unsafe_allow_html=True)
                 
-            with c2:
-                st.markdown("<div class='result-card'><h4>📑 Lifestyle Audit</h4>", unsafe_allow_html=True)
-                for cat, val in cat_scores.items():
-                    grade, g_col = get_grade(val)
+                # --- ROW 1: METRICS & REPORT CARD ---
+                c1, c2 = st.columns([1, 1.5])
+                
+                with c1:
                     st.markdown(f"""
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px;">
-                        <span style="font-weight: 500;">{cat}</span>
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <span style="color: #94a3b8; font-size: 0.9rem;">{val:.0%}</span>
-                            <span style="font-family: 'Plus Jakarta Sans'; font-weight: 800; color: {g_col}; background: {g_col}15; padding: 2px 10px; border-radius: 6px;">{grade}</span>
+                    <div class='result-card'>
+                        <div style="margin-bottom: 20px;">
+                            <div class="metric-label">Total Load</div>
+                            <div class="metric-value" style="color: {color}">{final_score:.1%}</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <div>
+                                <div class="metric-label">Mind</div>
+                                <div class="metric-value" style="font-size: 1.5rem;">{survey_total_norm:.1%}</div>
+                            </div>
+                            <div>
+                                <div class="metric-label">Body</div>
+                                <div class="metric-value" style="font-size: 1.5rem;">{bio_score:.1%}</div>
+                            </div>
                         </div>
                     </div>
                     """, unsafe_allow_html=True)
-                st.markdown("</div>", unsafe_allow_html=True)
+                    
+                with c2:
+                    st.markdown("<div class='result-card'><h4>📑 Lifestyle Audit</h4>", unsafe_allow_html=True)
+                    for cat, val in cat_scores.items():
+                        grade, g_col = get_grade(val)
+                        st.markdown(f"""
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px;">
+                            <span style="font-weight: 500;">{cat}</span>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <span style="color: #94a3b8; font-size: 0.9rem;">{val:.0%}</span>
+                                <span style="font-family: 'Plus Jakarta Sans'; font-weight: 800; color: {g_col}; background: {g_col}15; padding: 2px 10px; border-radius: 6px;">{grade}</span>
+                            </div>
+                        </div>
+                        """, unsafe_allow_html=True)
+                    st.markdown("</div>", unsafe_allow_html=True)
 
-            # --- ROW 2: DEEP DIAGNOSIS ---
-            st.markdown(f"""
-            <div class='result-card' style='border-left: 4px solid {color};'>
-                <h4 style="color: #f1f5f9; margin-top: 0;">🧬 Clinical Diagnosis</h4>
-                <p style='font-size: 1.05rem; color: #e2e8f0; margin-bottom: 15px;'>{remedy['BioState']}</p>
-                <div style="background: rgba(15, 23, 42, 0.5); padding: 15px; border-radius: 8px; border: 1px dashed rgba(148, 163, 184, 0.2);">
-                    <p style='color: #94a3b8; font-size: 0.95rem; margin: 0;'>{generate_diagnosis(bio_score, survey_total_norm, cat_scores)}</p>
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
-            
-            # --- ROW 3: IKS INTERVENTION ---
-            st.subheader("🌿 Therapeutic Protocol")
-            
-            icol1, icol2 = st.columns([1, 2])
-            with icol1:
-                st.image(remedy['Img'], caption=f"{level} Stress Protocol", use_container_width=True)
-            
-            with icol2:
+                # --- ROW 2: DEEP DIAGNOSIS ---
                 st.markdown(f"""
-                <div class='result-card' style='background: linear-gradient(135deg, {color}15 0%, {color}05 100%); border: 1px solid {color}30;'>
-                    <h3 style='color: {color}; margin-top:0;'>🧘 {remedy['Theme']}</h3>
-                    <div style='display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;'>
-                        <div>
-                            <h5 style='color: #2dd4bf; margin-bottom: 5px;'>🌬️ Pranayama</h5>
-                            <p style="font-size: 0.9rem;">{remedy['Pranayama']}</p>
-                        </div>
-                        <div>
-                            <h5 style='color: #60a5fa; margin-bottom: 5px;'>🧘 Asana</h5>
-                            <p style="font-size: 0.9rem;">{remedy['Asana']}</p>
-                        </div>
-                        <div>
-                            <h5 style='color: #fbbf24; margin-bottom: 5px;'>🥗 Nutrition</h5>
-                            <p style="font-size: 0.9rem;">{remedy['Diet']}</p>
-                        </div>
-                        <div>
-                            <h5 style='color: #a78bfa; margin-bottom: 5px;'>📿 Mantra</h5>
-                            <p style="font-size: 0.9rem;">{remedy['Mantra']}</p>
-                        </div>
+                <div class='result-card' style='border-left: 4px solid {color};'>
+                    <h4 style="color: #f1f5f9; margin-top: 0;">🧬 Clinical Diagnosis</h4>
+                    <p style='font-size: 1.05rem; color: #e2e8f0; margin-bottom: 15px;'>{remedy['BioState']}</p>
+                    <div style="background: rgba(15, 23, 42, 0.5); padding: 15px; border-radius: 8px; border: 1px dashed rgba(148, 163, 184, 0.2);">
+                        <p style='color: #94a3b8; font-size: 0.95rem; margin: 0;'>{generate_diagnosis(bio_score, survey_total_norm, cat_scores)}</p>
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
-
-            # --- OFFICIAL REPORT DOWNLOAD ---
-            st.markdown("---")
-            st.subheader("📥 Official Clinical Downloads")
-            
-            with st.spinner("🖨️ Generating High-Res Clinical Report..."):
-                buf_png, buf_pdf = generate_clinical_report(final_score, bio_score, survey_total_norm, cat_scores, remedy, level)
                 
-            # Preview
-            st.image(buf_png, caption="Official Clinical Report Preview", width=500)
-            
-            d1, d2, d3 = st.columns([1, 1, 2])
-            with d1:
-                st.download_button(
-                    label="📄 Download PDF Report",
-                    data=buf_pdf,
-                    file_name="SFAA_Clinical_Report.pdf",
-                    mime="application/pdf"
-                )
-            with d2:
-                st.download_button(
-                    label="🖼️ Download Report Image",
-                    data=buf_png,
-                    file_name="SFAA_Clinical_Report.png",
-                    mime="image/png"
-                )
-            with d3:
-                st.info("ℹ️ **Privacy Note:** This report is generated locally on your device using a secure Python engine. No data is sent to the cloud.")
+                # --- ROW 3: IKS INTERVENTION ---
+                st.subheader("🌿 Therapeutic Protocol")
+                
+                icol1, icol2 = st.columns([1, 2])
+                with icol1:
+                    st.image(remedy['Img'], caption=f"{level} Stress Protocol", use_container_width=True)
+                
+                with icol2:
+                    st.markdown(f"""
+                    <div class='result-card' style='background: linear-gradient(135deg, {color}15 0%, {color}05 100%); border: 1px solid {color}30;'>
+                        <h3 style='color: {color}; margin-top:0;'>🧘 {remedy['Theme']}</h3>
+                        <div style='display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;'>
+                            <div>
+                                <h5 style='color: #2dd4bf; margin-bottom: 5px;'>🌬️ Pranayama</h5>
+                                <p style="font-size: 0.9rem;">{remedy['Pranayama']}</p>
+                            </div>
+                            <div>
+                                <h5 style='color: #60a5fa; margin-bottom: 5px;'>🧘 Asana</h5>
+                                <p style="font-size: 0.9rem;">{remedy['Asana']}</p>
+                            </div>
+                            <div>
+                                <h5 style='color: #fbbf24; margin-bottom: 5px;'>🥗 Nutrition</h5>
+                                <p style="font-size: 0.9rem;">{remedy['Diet']}</p>
+                            </div>
+                            <div>
+                                <h5 style='color: #a78bfa; margin-bottom: 5px;'>📿 Mantra</h5>
+                                <p style="font-size: 0.9rem;">{remedy['Mantra']}</p>
+                            </div>
+                        </div>
+                    </div>
+                    """, unsafe_allow_html=True)
 
-            # --- CHARTS ---
-            with st.expander("📈 View Telemetry Data"):
-                chart_col1, chart_col2 = st.columns(2)
-                with chart_col1:
-                    df_ch = pd.DataFrame(list(cat_scores.items()), columns=['Category', 'Load'])
-                    fig = px.bar(df_ch, x='Load', y='Category', orientation='h', text_auto='.0%', color='Load', color_continuous_scale='Teal')
-                    fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#94a3b8', family='Plus Jakarta Sans'))
-                    st.plotly_chart(fig, use_container_width=True)
-                with chart_col2:
-                    fig_r = go.Figure(go.Scatterpolar(
-                        r=list(cat_scores.values()), theta=list(cat_scores.keys()), fill='toself', line_color=color
-                    ))
-                    fig_r.update_layout(polar=dict(radialaxis=dict(visible=True, range=[0, 1]), bgcolor='rgba(0,0,0,0)'), paper_bgcolor='rgba(0,0,0,0)', font=dict(color='#94a3b8', family='Plus Jakarta Sans'))
-                    st.plotly_chart(fig_r, use_container_width=True)
+                # --- OFFICIAL REPORT DOWNLOAD ---
+                st.markdown("---")
+                st.subheader("📥 Official Clinical Downloads")
+                
+                with st.spinner("🖨️ Generating High-Res Clinical Report..."):
+                    buf_png, buf_pdf = generate_clinical_report(final_score, bio_score, survey_total_norm, cat_scores, remedy, level, patient_name)
+                    
+                # Preview
+                st.image(buf_png, caption="Official Clinical Report Preview", width=500)
+                
+                d1, d2, d3 = st.columns([1, 1, 2])
+                with d1:
+                    st.download_button(
+                        label="📄 Download PDF Report",
+                        data=buf_pdf,
+                        file_name="SFAA_Clinical_Report.pdf",
+                        mime="application/pdf"
+                    )
+                with d2:
+                    st.download_button(
+                        label="🖼️ Download Report Image",
+                        data=buf_png,
+                        file_name="SFAA_Clinical_Report.png",
+                        mime="image/png"
+                    )
+                with d3:
+                    st.info("ℹ️ **Privacy Note:** This report is generated locally on your device using a secure Python engine. No data is sent to the cloud.")
 
-            # --- SESSION TREND TRACKER (Phase 8) ---
-            st.markdown("---")
-            with st.expander("📉 Session Trend Tracker", expanded=True):
-                if len(st.session_state['history']) > 1:
-                    hist_df = pd.DataFrame(st.session_state['history'], columns=['Stress Score'])
-                    st.line_chart(hist_df, color="#2dd4bf")
-                    st.caption(f"Tracking {len(hist_df)} datapoints in current session.")
-                else:
-                    st.info("Generating trend data... (Need at least 2 reports)")
+                # --- CHARTS ---
+                with st.expander("📈 View Telemetry Data"):
+                    chart_col1, chart_col2 = st.columns(2)
+                    with chart_col1:
+                        df_ch = pd.DataFrame(list(cat_scores.items()), columns=['Category', 'Load'])
+                        fig = px.bar(df_ch, x='Load', y='Category', orientation='h', text_auto='.0%', color='Load', color_continuous_scale='Teal')
+                        fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#94a3b8', family='Plus Jakarta Sans'))
+                        st.plotly_chart(fig, use_container_width=True)
+                    with chart_col2:
+                        fig_r = go.Figure(go.Scatterpolar(
+                            r=list(cat_scores.values()), theta=list(cat_scores.keys()), fill='toself', line_color=color
+                        ))
+                        fig_r.update_layout(polar=dict(radialaxis=dict(visible=True, range=[0, 1]), bgcolor='rgba(0,0,0,0)'), paper_bgcolor='rgba(0,0,0,0)', font=dict(color='#94a3b8', family='Plus Jakarta Sans'))
+                        st.plotly_chart(fig_r, use_container_width=True)
+
+                # --- SESSION TREND TRACKER (Phase 8) ---
+                st.markdown("---")
+                with st.expander("📉 Session Trend Tracker", expanded=True):
+                    if len(st.session_state['history']) > 1:
+                        hist_df = pd.DataFrame(st.session_state['history'], columns=['Stress Score'])
+                        st.line_chart(hist_df, color="#2dd4bf")
+                        st.caption(f"Tracking {len(hist_df)} datapoints in current session.")
+                    else:
+                        st.info("Generating trend data... (Need at least 2 reports)")
+
+                # --- NEW PATIENT BUTTON ---
+                st.markdown("---")
+                st.markdown("""
+                <div style="text-align: center; margin: 30px 0 10px 0;">
+                    <p style="color: #64748b; font-size: 0.95rem;">Assessment complete. Start a new session below.</p>
+                </div>
+                """, unsafe_allow_html=True)
+                if st.button("👤 NEW PATIENT — Start Over", use_container_width=True):
+                    # Reset wizard and clear form data
+                    keys_to_clear = ['wizard_step', 'patient_name_val',
+                                     'aq1','aq2','aq3','aq4','aq5',
+                                     'eq1','eq2','eq3','eq4',
+                                     'sq1','sq2','sq3','sq4',
+                                     'pq1','pq2','pq3','pq4',
+                                     'cq1','cq2','cq3','cq4','cq5','cq6','cq7',
+                                     'eda','hr','temp']
+                    for k in keys_to_clear:
+                        if k in st.session_state:
+                            del st.session_state[k]
+                    st.rerun()
 
     # --- TRANSPARENCY DASHBOARD (Phase 14) ---
     render_transparency_dashboard()

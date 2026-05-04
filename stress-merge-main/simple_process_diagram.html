@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,17 +18,20 @@
             margin: 0;
             box-sizing: border-box;
         }
+
         h1 {
             color: #333333;
             margin-bottom: 10px;
             margin-top: 0;
             text-align: center;
         }
+
         p.subtitle {
             color: #666666;
             margin-bottom: 40px;
             text-align: center;
         }
+
         .mermaid {
             background-color: #ffffff;
             padding: 40px;
@@ -38,56 +42,64 @@
             display: flex;
             justify-content: center;
         }
+
         .mermaid svg {
             max-width: 100%;
             height: auto;
         }
     </style>
 </head>
+
 <body>
     <h1>Project Process Flow</h1>
     <p class="subtitle">A simplified, high-level view of the Neuro-Fusion project lifecycle.</p>
-    
+
     <div class="mermaid">
         flowchart LR
-            subgraph P1 [1. Preparation & AI Training]
-                direction TB
-                A(["Generate Sensor Data"])
-                B(["Train Best ML Model"])
-                A --> B
-            end
+        subgraph P1 ["1. Preparation & AI Training"]
+        direction TB
+        A(["Generate Sensor & Survey Data"])
+        B1(["Train XGBoost - Survey Model"])
+        B2(["Train Random Forest - Wearable Model"])
+        B3(["Train GBM Meta-Learner"])
+        A --> B1 & B2
+        B1 & B2 --> B3
+        end
 
-            subgraph P2 [2. Patient Input]
-                direction TB
-                C(["Record Live Biometrics"])
-                D(["Take PSS Questionnaire"])
-            end
+        subgraph P2 ["2. Patient Input Wizard"]
+        direction TB
+        C0(["Enter Patient Name"])
+        C1(["Step 1-5: PSS Questionnaire"])
+        C2(["Step 6: Record Biometrics"])
+        C0 --> C1 --> C2
+        end
 
-            subgraph P3 [3. Neuro-Fusion Engine]
-                direction TB
-                E(["Body Score (60%)"])
-                F(["Mind Score (40%)"])
-                G(["Weighted Fusion Analysis"])
-                E & F --> G
-            end
+        subgraph P3 ["3. Stacking Ensemble Engine"]
+        direction TB
+        E(["XGBoost: Mind Score"])
+        F(["Random Forest: Body Score"])
+        G(["GBM Meta-Learner Fusion"])
+        E & F --> G
+        end
 
-            subgraph P4 [4. Diagnosis & Output]
-                direction TB
-                H(["Predict Stress Level"])
-                I(["Generate Clinical Report"])
-                J(["Suggest IKS Therapies"])
-                H --> I
-                H --> J
-            end
+        subgraph P4 ["4. Diagnosis & Output"]
+        direction TB
+        H(["Predict Stress Level"])
+        I(["Generate Clinical Report"])
+        J(["Suggest IKS Therapies"])
+        K(["New Patient - Start Over"])
+        H --> I & J
+        I --> K
+        end
 
-            B ==>|Model Ready| C & D
-            C ==>|Objective Data| E
-            D ==>|Subjective Data| F
-            G ==>|Final Score| H
+        B3 ==>|Models Ready| C0
+        C1 ==>|Survey Data| E
+        C2 ==>|Biometric Data| F
+        G ==>|Final Score| H
     </div>
 
     <script>
-        mermaid.initialize({ 
+        mermaid.initialize({
             startOnLoad: true,
             theme: 'default',
             securityLevel: 'loose',
@@ -98,4 +110,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -30,12 +30,47 @@ def generate_synthetic_data():
         if s == 'Low': total_scores.append(random.randint(0, 10))
         elif s == 'Medium': total_scores.append(random.randint(11, 20))
         else: total_scores.append(random.randint(21, 30))
+    
+    # Generate 5 PSS category scores (0.0-1.0) correlated with stress level
+    # These are used by the XGBoost survey model
+    academic_scores = []
+    emotional_scores = []
+    social_scores = []
+    physical_scores = []
+    coping_scores = []
+    
+    for s in survey_labels:
+        if s == 'Low':
+            academic_scores.append(np.clip(np.random.normal(0.20, 0.10), 0.0, 1.0))
+            emotional_scores.append(np.clip(np.random.normal(0.15, 0.08), 0.0, 1.0))
+            social_scores.append(np.clip(np.random.normal(0.18, 0.10), 0.0, 1.0))
+            physical_scores.append(np.clip(np.random.normal(0.15, 0.08), 0.0, 1.0))
+            coping_scores.append(np.clip(np.random.normal(0.20, 0.10), 0.0, 1.0))
+        elif s == 'Medium':
+            academic_scores.append(np.clip(np.random.normal(0.50, 0.12), 0.0, 1.0))
+            emotional_scores.append(np.clip(np.random.normal(0.45, 0.12), 0.0, 1.0))
+            social_scores.append(np.clip(np.random.normal(0.40, 0.12), 0.0, 1.0))
+            physical_scores.append(np.clip(np.random.normal(0.45, 0.10), 0.0, 1.0))
+            coping_scores.append(np.clip(np.random.normal(0.50, 0.12), 0.0, 1.0))
+        else:  # High
+            academic_scores.append(np.clip(np.random.normal(0.80, 0.10), 0.0, 1.0))
+            emotional_scores.append(np.clip(np.random.normal(0.75, 0.10), 0.0, 1.0))
+            social_scores.append(np.clip(np.random.normal(0.70, 0.12), 0.0, 1.0))
+            physical_scores.append(np.clip(np.random.normal(0.75, 0.10), 0.0, 1.0))
+            coping_scores.append(np.clip(np.random.normal(0.80, 0.10), 0.0, 1.0))
+    
+    print(f"[OK] Generated 5 PSS category scores for {n_survey} survey records.")
             
     survey_df = pd.DataFrame({
         'Timestamp': survey_timestamps,
         'Participant_ID': ['P001'] * n_survey,
         'Stress_Level': survey_labels,
-        'Total_Score': total_scores
+        'Total_Score': total_scores,
+        'Academic_Score': academic_scores,
+        'Emotional_Score': emotional_scores,
+        'Social_Score': social_scores,
+        'Physical_Score': physical_scores,
+        'Coping_Score': coping_scores
     })
     
     # 2. Generate Wearable Data (Aligned)

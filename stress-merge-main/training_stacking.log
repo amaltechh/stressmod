@@ -451,3 +451,154 @@ Architecture:
 2026-05-04 21:50:12 |    Level 2:  GBM Meta-Learner \u2192 Fused (6 probabilities) \u2192 Final prediction
 2026-05-04 21:50:12 | 
 To use in live app: python -m streamlit run live_app.py --server.port 8530
+2026-05-04 23:08:33 | 
+================================================================================
+2026-05-04 23:08:33 | \U0001f9e0 NEURO-FUSION STACKING ENSEMBLE TRAINER
+2026-05-04 23:08:33 | ================================================================================
+2026-05-04 23:08:33 | Timestamp: 2026-05-04 23:08:33
+2026-05-04 23:08:33 | 
+================================================================================
+2026-05-04 23:08:33 | \U0001f4c2 LOADING DATA
+2026-05-04 23:08:33 | ================================================================================
+2026-05-04 23:08:33 | \u2713 Survey Data: 20,000 records, Columns: ['Timestamp', 'Participant_ID', 'Stress_Level', 'Total_Score', 'Academic_Score', 'Emotional_Score', 'Social_Score', 'Physical_Score', 'Coping_Score']
+2026-05-04 23:08:33 | \u2713 Wearable Data: 100,000 records, Columns: ['Timestamp', 'Participant_ID', 'Predicted Stress', 'EDA', 'TEMP', 'EMG', 'RESP', 'ECG', 'HR']
+2026-05-04 23:08:33 | 
+\U0001f52c ALIGNING SURVEY + WEARABLE DATA
+2026-05-04 23:08:33 |    Survey records: 20,000
+2026-05-04 23:08:33 |    Wearable records: 100,000
+2026-05-04 23:08:33 |    Wearable-to-Survey ratio: 5:1
+2026-05-04 23:08:33 | \u2713 Aligned dataset: 20,000 records with 9 columns
+2026-05-04 23:08:33 |    Survey features: Academic, Emotional, Social, Physical, Coping
+2026-05-04 23:08:33 |    Wearable features: EDA, HR, TEMP
+2026-05-04 23:08:33 |    Target distribution:
+Stress_Level
+Low       8070
+Medium    7924
+High      4006
+2026-05-04 23:08:33 | 
+================================================================================
+2026-05-04 23:08:33 | \U0001f680 TRAINING STACKING ENSEMBLE
+2026-05-04 23:08:33 | ================================================================================
+2026-05-04 23:08:33 | 
+\U0001f522 Label Encoding: {'High': np.int64(0), 'Low': np.int64(1), 'Medium': np.int64(2)}
+2026-05-04 23:08:33 | 
+\U0001f4ca DATA SPLIT
+2026-05-04 23:08:33 |    Training samples: 16,000
+2026-05-04 23:08:33 |    Testing samples: 4,000
+2026-05-04 23:08:33 | 
+================================================================================
+2026-05-04 23:08:33 | \U0001f4e6 PHASE 1: Out-of-Fold Prediction Generation (5-Fold CV)
+2026-05-04 23:08:33 | ================================================================================
+2026-05-04 23:08:33 | 
+--- Fold 1/5 ---
+2026-05-04 23:08:34 |    XGBoost (Survey) Fold Acc: 99.9%
+2026-05-04 23:08:34 |    Random Forest (Wearable) Fold Acc: 95.2%
+2026-05-04 23:08:34 | 
+--- Fold 2/5 ---
+2026-05-04 23:08:34 |    XGBoost (Survey) Fold Acc: 99.9%
+2026-05-04 23:08:34 |    Random Forest (Wearable) Fold Acc: 94.8%
+2026-05-04 23:08:34 | 
+--- Fold 3/5 ---
+2026-05-04 23:08:34 |    XGBoost (Survey) Fold Acc: 99.8%
+2026-05-04 23:08:34 |    Random Forest (Wearable) Fold Acc: 94.6%
+2026-05-04 23:08:34 | 
+--- Fold 4/5 ---
+2026-05-04 23:08:35 |    XGBoost (Survey) Fold Acc: 99.9%
+2026-05-04 23:08:35 |    Random Forest (Wearable) Fold Acc: 95.1%
+2026-05-04 23:08:35 | 
+--- Fold 5/5 ---
+2026-05-04 23:08:35 |    XGBoost (Survey) Fold Acc: 99.8%
+2026-05-04 23:08:35 |    Random Forest (Wearable) Fold Acc: 95.2%
+2026-05-04 23:08:35 | 
+================================================================================
+2026-05-04 23:08:35 | \U0001f3af PHASE 2: Training Final Level-1 Models (Full Training Set)
+2026-05-04 23:08:35 | ================================================================================
+2026-05-04 23:08:35 | 
+\U0001f916 Training XGBoost on Survey Features...
+2026-05-04 23:08:35 |    Training Time: 0.15s
+2026-05-04 23:08:35 |    Test Accuracy: 99.9%
+2026-05-04 23:08:35 |    Test F1-Score: 99.9%
+2026-05-04 23:08:35 | 
+   Classification Report (XGBoost - Survey):
+2026-05-04 23:08:35 |               precision    recall  f1-score   support
+
+        High       1.00      1.00      1.00       801
+         Low       1.00      1.00      1.00      1614
+      Medium       1.00      1.00      1.00      1585
+
+    accuracy                           1.00      4000
+   macro avg       1.00      1.00      1.00      4000
+weighted avg       1.00      1.00      1.00      4000
+
+2026-05-04 23:08:35 | 
+\U0001f332 Training Random Forest on Wearable Features...
+2026-05-04 23:08:36 |    Training Time: 0.24s
+2026-05-04 23:08:36 |    Test Accuracy: 95.1%
+2026-05-04 23:08:36 |    Test F1-Score: 95.1%
+2026-05-04 23:08:36 | 
+   Classification Report (Random Forest - Wearable):
+2026-05-04 23:08:36 |               precision    recall  f1-score   support
+
+        High       0.92      0.94      0.93       801
+         Low       0.96      0.96      0.96      1614
+      Medium       0.96      0.94      0.95      1585
+
+    accuracy                           0.95      4000
+   macro avg       0.95      0.95      0.95      4000
+weighted avg       0.95      0.95      0.95      4000
+
+2026-05-04 23:08:36 | 
+================================================================================
+2026-05-04 23:08:36 | \u26a1 PHASE 3: Training GBM Meta-Learner (Fusion Model)
+2026-05-04 23:08:36 | ================================================================================
+2026-05-04 23:08:36 |    Meta-features shape: (16000, 6)
+2026-05-04 23:08:36 |    Features: [XGB_P_High, XGB_P_Low, XGB_P_Med, RF_P_High, RF_P_Low, RF_P_Med]
+2026-05-04 23:08:38 | 
+   Training Time: 2.31s
+2026-05-04 23:08:38 |    Test Accuracy: 100.0%
+2026-05-04 23:08:38 |    Test F1-Score: 100.0%
+2026-05-04 23:08:38 |    Test Precision: 100.0%
+2026-05-04 23:08:38 |    Test Recall: 100.0%
+2026-05-04 23:08:38 | 
+   Classification Report (GBM Meta-Learner - Stacked):
+2026-05-04 23:08:38 |               precision    recall  f1-score   support
+
+        High       1.00      1.00      1.00       801
+         Low       1.00      1.00      1.00      1614
+      Medium       1.00      1.00      1.00      1585
+
+    accuracy                           1.00      4000
+   macro avg       1.00      1.00      1.00      4000
+weighted avg       1.00      1.00      1.00      4000
+
+2026-05-04 23:08:38 | 
+================================================================================
+2026-05-04 23:08:38 | \U0001f4ca FINAL COMPARISON
+2026-05-04 23:08:38 | ================================================================================
+2026-05-04 23:08:38 | 
+                     Model                 Data Source  Accuracy  F1-Score  Training Time (s)
+          XGBoost (Survey)   PSS Survey (5 categories)   0.99850  0.998500           0.151031
+  Random Forest (Wearable)     Sensors (EDA, HR, TEMP)   0.95075  0.950783           0.235264
+GBM Meta-Learner (Stacked) Fused Predictions (6 probs)   0.99950  0.999500           2.312742
+2026-05-04 23:08:38 | 
+\u2b50 Stacking Improvement over best single model: +0.1%
+2026-05-04 23:08:38 | 
+================================================================================
+2026-05-04 23:08:38 | \U0001f4be SAVING MODELS
+2026-05-04 23:08:38 | ================================================================================
+2026-05-04 23:08:38 |    \u2713 XGBoost (Survey) \u2192 survey/trained_xgb_survey.pkl
+2026-05-04 23:08:38 |    \u2713 Random Forest (Wearable) \u2192 wearable/trained_rf_wearable.pkl
+2026-05-04 23:08:38 |    \u2713 GBM Meta-Learner (Fusion) \u2192 wearable/trained_gbm_meta.pkl
+2026-05-04 23:08:38 |    \u2713 Label Encoder \u2192 wearable/label_encoder.pkl
+2026-05-04 23:08:38 |    \u2713 Results table \u2192 training_stacking_results.csv
+2026-05-04 23:08:38 | 
+================================================================================
+2026-05-04 23:08:38 | \u2705 STACKING ENSEMBLE TRAINING COMPLETE
+2026-05-04 23:08:38 | ================================================================================
+2026-05-04 23:08:38 | 
+Architecture:
+2026-05-04 23:08:38 |    Level 1a: XGBoost \u2192 Survey (5 PSS scores) \u2192 3 class probabilities
+2026-05-04 23:08:38 |    Level 1b: Random Forest \u2192 Wearable (EDA, HR, TEMP) \u2192 3 class probabilities
+2026-05-04 23:08:38 |    Level 2:  GBM Meta-Learner \u2192 Fused (6 probabilities) \u2192 Final prediction
+2026-05-04 23:08:38 | 
+To use in live app: python -m streamlit run live_app.py --server.port 8530

@@ -1,4 +1,4 @@
 Model,Data Source,Accuracy,F1-Score,Training Time (s)
-XGBoost (Survey),PSS Survey (5 categories),0.9985,0.9985001651888835,0.1294562816619873
-Random Forest (Wearable),"Sensors (EDA, HR, TEMP)",0.95075,0.9507827187981536,0.2588481903076172
-GBM Meta-Learner (Stacked),Fused Predictions (6 probs),0.9995,0.9995,2.4413647651672363
+XGBoost (Survey),PSS Survey (5 categories),0.9985,0.9985001651888835,0.1510307788848877
+Random Forest (Wearable),"Sensors (EDA, HR, TEMP)",0.95075,0.9507827187981536,0.23526430130004883
+GBM Meta-Learner (Stacked),Fused Predictions (6 probs),0.9995,0.9995,2.31274151802063
